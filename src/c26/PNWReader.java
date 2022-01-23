@@ -59,7 +59,7 @@ public class PNWReader {
             }
         }
     }
-
+    //show String
     public void showString() throws IOException {
         if (!fileReader.ready())
             throw new IllegalStateException("This method was already used");
