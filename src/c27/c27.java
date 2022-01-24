@@ -42,7 +42,6 @@ public class c27 {
     }
 
     public static boolean isHexNumber(String number) {
-
         Pattern p = Pattern.compile("-?[0-9a-fA-F]+");
         Matcher m = p.matcher(number);
         boolean b = m.matches();
