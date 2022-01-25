@@ -36,16 +36,18 @@ public class c27 {
                 System.out.println(date);
             else
                 System.out.println("Wrong date input");
+            /*
             //trim example
-//          String date = in.next();
-//          String[] val = date.split("-");
-//          System.out.println("Year: " + val[0]);
-//          if (val.length > 1) {
-//              System.out.println("Month: " + val[1]);
-//           }
-//           if (val.length > 2) {
-//               System.out.println("Day: " + val[2]);
-//           }
+          String date = in.next();
+          String[] val = date.split("-");
+          System.out.println("Year: " + val[0]);
+          if (val.length > 1) {
+              System.out.println("Month: " + val[1]);
+           }
+           if (val.length > 2) {
+               System.out.println("Day: " + val[2]);
+           }
+            */
         }
         System.out.println("-------------------------Ex3-------------------------");
         {
@@ -71,7 +73,6 @@ public class c27 {
     }
 
     public static boolean isHexNumber(String number) {
-//        Pattern p = Pattern.compile("[0-9a-fA-F]+");
         return Pattern.compile("[0-9a-fA-F]+").matcher(number).matches();
     }
 }
