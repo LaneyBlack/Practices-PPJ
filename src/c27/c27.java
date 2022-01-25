@@ -68,7 +68,7 @@ public class c27 {
             Matcher matcher = pattern.matcher(text);
             while (matcher.find())
                 counter++;
-//                text.replace(matcher.group(), ""); //don't know why, butt find goes to the next characters after finding one
+//                text.replace(matcher.group(), ""); //don't know why, butt find goes t o the next characters after finding one
             System.out.println(counter);
         }
     }
