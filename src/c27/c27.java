@@ -4,29 +4,26 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static functions.Functions.convertToNumericSystem32;
+
 public class c27 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("-------------------------Ex1-------------------------");
         int value = in.nextInt();
+        System.out.println(convertToNumericSystem32(value,2));
+        System.out.println(convertToNumericSystem32(value,4));
+        System.out.println(convertToNumericSystem32(value,8));
+        System.out.println(convertToNumericSystem32(value,16));
+        /*
+        //example for 16 system
         StringBuilder output = new StringBuilder();
-        for (int i = 31; i >= 0; i--) // binary from 30, cause first time we >> and leave 00 bits  (32-1=31)
-            output.append(value >> i & 0b1);
-        System.out.println(output);
-        output = new StringBuilder();
-        for (int i = 30; i >= 0; i -= 2) //quad from 30, cause first time we >> and leave 00 bits  (32-2=30)
-            output.append(value >> i & 0b11);
-        System.out.println(output);
-        output = new StringBuilder();
-        for (int i = 30; i >= 0; i -= 3)  //oct from 30, cause 32/3!=0 => first time we pick 00 bytes, and then 000
-            output.append(value >> i & 0b111);
-        System.out.println(output);
-        output = new StringBuilder();
         for (int i = 28; i >= 0; i -= 4) { //hex from 28, cause first time we pick 0000 bytes (32-4=28)
             int tmp = value >> i & 0b1111;
             output.append((tmp < 10) ? tmp : (char) ('A' + (tmp - 10)) + "");
         }
         System.out.println(output);
+        */
         System.out.println("-------------------------Ex2-------------------------");
         {
             System.out.println("Please write a date (yyyy-mm-dd)");

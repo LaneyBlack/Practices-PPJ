@@ -99,17 +99,14 @@ public class Functions {
     }
 
     public static boolean isArmstrongNumber(int val) {
-        if (val==0)
+        if (val == 0)
             return false;
         int[] digits = splitToDigits(val);
         int sum = 0;
-        for (int i = 0; i < digits.length; i++) {
-            sum += Math.pow(digits[i], digits.length);
+        for (int digit : digits) {
+            sum += Math.pow(digit, digits.length);
         }
-        if (sum == val)
-            return true;
-        else
-            return false;
+        return sum == val;
     }
 
     public static boolean isPrimeNumber(int number) {
@@ -140,6 +137,22 @@ public class Functions {
         char[] result = new char[text.length()];
         for (int i = 0; i < result.length; i++) {
             result[i] = text.charAt(i);
+        }
+        return result;
+    }
+
+    public static String convertToNumericSystem32(int value, int system) {
+        switch (system) {
+            case 2, 4, 8, 16:
+                break;
+            default:
+                throw new RuntimeException("Wrong numeric system");
+        }
+        String result = "";
+        int iterator = (int) Math.sqrt(system);
+        for (int i = 0; i < 31; i += iterator) {
+            int tmp = ((value >> i) & (system - 1));
+            result = tmp < 10 ? tmp + result : (char) ('A' + tmp - 10) + result;
         }
         return result;
     }
