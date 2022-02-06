@@ -1,15 +1,42 @@
 package test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class test {
     public static void main(String[] args) {
         String s = "offends repeats all are wowe";
+        System.out.println(getUniques("abbababaaba"));
         System.out.println(minSum(s));
+//        ArrayList<Integer> arrayListTree = new ArrayList(Arrays.asList(1, 2, 2, 4, 3, 3, 4, 8, 7, 6, 5, 5, 6, 7, 8));
+//        System.out.println(isTree(arrayListTree));
     }
+
+//    public static boolean isTree(ArrayList<Integer> tree) {
+//        for (int i = 0; i < tree.size(); i++) {
+//            ArrayList<Integer> var = new ArrayList();
+//            for (int j = 0; j <= i * 2; j++)
+//                var.add(tree.get(j));
+//            if (!isPalindrome(var))
+//                return false;
+//            for (int j = 0; j < i * 2; j++)
+//                tree.remove(j);
+//
+//        }
+//        return true;
+//    }
+
+//    public static boolean isPalindrome(ArrayList arrayList) {
+//        for (int i = 0; i < arrayList.size() / 2; i++)
+//            if (!arrayList.get(i).equals(arrayList.get(arrayList.size() - 1 - i)))
+//                return false;
+//        return true;
+//    }
 
     public static String minSum(String input) {
         String[] words = input.trim().split(" ");
         String result = words[0];
-        for (int i = 1; i < words.length ; i++)
+        for (int i = 1; i < words.length; i++)
             if (getUniques(result) > getUniques(words[i]))
                 result = words[i];
         return result;
@@ -17,11 +44,10 @@ public class test {
 
     public static int getUniques(String string) {
         int matches = 0;
-        for (int i = 0; i < string.length()-1; i++)
-            if (string.charAt(i)!='1'){
-                string.replaceAll(String.valueOf(string.charAt(i)),"1");
-                matches++;
-            }
+        for (int i = 0; i < string.length(); i++) {
+            string = string.replaceAll(String.valueOf(string.charAt(i)), "");
+            matches++;
+        }
         return matches;
     }
 
