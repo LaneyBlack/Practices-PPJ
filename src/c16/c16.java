@@ -2,8 +2,6 @@ package c16;
 
 import functions.Functions;
 
-import java.util.ArrayList;
-
 import static functions.Functions.isArmstrongNumber;
 import static functions.Functions.isPalindrom;
 

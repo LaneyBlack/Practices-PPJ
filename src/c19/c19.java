@@ -2,8 +2,6 @@ package c19;
 
 import c19.classes.*;
 
-import java.util.Scanner;
-
 import static c19.classes.User.getOldest;
 import static c19.classes.User.returnOlder;
 import static functions.Functions.arrayPrint;
